@@ -9,7 +9,8 @@ The **Teacher Rating & Feedback Ledger** is a decentralized smart contract built
 To provide a transparent and immutable platform for collecting and managing teacher ratings and feedback, ensuring fairness and accountability in educational institutions.
 
 ## Smart Contract Details
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/2124192d-e4d5-4a80-a1e2-b91fa9e8cf50)
+
 Transaction Hash: "0x442eaddbc7a29335387670e7602e355ae8a6dd4ea0b45a6801181b5f54a39c0a"
 Module: "0x710a17549a738350806e597866f7a28ef0c722eaf09520c873cdc6e97a6e009c"
 
