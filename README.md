@@ -1,52 +1,39 @@
-# 🗳️ SimpleVoting on Aptos Blockchain
+# 🧑‍🏫 Teacher Rating & Feedback Ledger
 
 ## 📜 Project Description
 
-**SimpleVoting** is a decentralized smart contract built on the Aptos blockchain using the Move programming language. It allows users to create and participate in voting polls in a secure, trustless, and verifiable manner. Each user can vote only once per poll, and votes are tallied transparently on-chain.
+The **Teacher Rating & Feedback Ledger** is a decentralized smart contract built on the Aptos blockchain using the Move programming language. It allows users to rate teachers and provide feedback in a secure, immutable, and transparent manner. Each teacher has a unique rating ledger that can be created, updated, and closed by the creator.
 
 ## 🎯 Project Vision
 
-To build a transparent, immutable, and fair voting mechanism leveraging blockchain technology that can be adopted for small-scale or community-based decisions without the risk of manipulation or fraud.
+To provide a transparent and immutable platform for collecting and managing teacher ratings and feedback, ensuring fairness and accountability in educational institutions.
 
-## 🚀 Future Scope
+## Smart Contract Details
+![alt text](image.png)
+Transaction Hash: "0x442eaddbc7a29335387670e7602e355ae8a6dd4ea0b45a6801181b5f54a39c0a"
+Module: "0x710a17549a738350806e597866f7a28ef0c722eaf09520c873cdc6e97a6e009c"
 
-- ✅ **UI Integration**: Build a web-based frontend using React and Wallet adapters for seamless interaction.
-- ✅ **Poll Expiry Mechanism**: Add expiry timestamps for polls to automatically deactivate.
-- ✅ **Multiple Polls per Creator**: Enable support for users to host multiple simultaneous polls.
-- ✅ **Event Emission**: Emit events for each vote and poll creation for easier off-chain tracking.
-- ✅ **Anonymous Voting**: Add zero-knowledge voting support for privacy.
-- ✅ **Result Visibility Controls**: Allow creator to hide results until the poll ends.
+## 🚀 Features
 
-## 📜 Contract Details
+### ✅ `create_ledger`
+- Creates a new rating ledger for a teacher.
+- Initializes the ledger with empty ratings, feedbacks, and raters.
+- Marks the ledger as active.
 
-- **Contract Address**: `0x710a17549a738350806e597866f7a28ef0c722eaf09520c873cdc6e97a6e009c`
-- **Function Deployed**: `code::publish_package_txn`
-- **Deployment Status**: ✅ Success
+### ✅ `rate`
+- Allows a user to submit a rating and feedback for a teacher.
+- Ensures the ledger is active before accepting ratings.
+- Prevents a user from rating the same teacher more than once.
+- Records the rating, feedback, and rater's address.
 
-### 🔍 Deployment Screenshot
-
-![Screenshot 2025-04-22 221413](https://github.com/user-attachments/assets/8f9128e5-f7d3-4cad-a33b-f35147417c1b)
-
-
----
-
-## 🧩 Smart Contract Features
-
-### ✅ `create_poll`
-- Creates a new poll with a given list of options.
-- Initializes vote counters to zero.
-- Stores the poll data under the creator’s address.
-
-### ✅ `vote`
-- Allows a signer to vote for a selected option.
-- Ensures a user can vote only once.
-- Checks that the poll is still active.
+### ✅ `close_ledger`
+- Allows the creator to close the rating ledger for a teacher.
+- Ensures only the creator can perform this action.
+- Marks the ledger as inactive to stop further ratings.
 
 ### 🔐 Error Handling
-- **E_ALREADY_VOTED (1)** – Thrown if a voter tries to vote more than once.
-- **E_VOTING_CLOSED (2)** – Thrown if the poll is no longer active.
-
----
+- **E_ALREADY_RATED (1)** – Thrown if a user tries to rate the same teacher more than once.
+- **E_RATING_CLOSED (2)** – Thrown if the ledger is no longer active or if an unauthorized user attempts to close it.
 
 ## 📚 Tech Stack
 
@@ -54,8 +41,6 @@ To build a transparent, immutable, and fair voting mechanism leveraging blockcha
 - **Language**: Move
 - **Wallet Support**: Coming soon!
 - **Frontend** (planned): React, TypeScript, Aptos Wallet Adapter
-
----
 
 ## 📬 Contact & Contributions
 

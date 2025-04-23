@@ -1,11 +1,14 @@
 [package]
-name = "HirakSabui"
-version = "1.0.0"
+name = "TeacherRating"
+version = "0.2.0"
+upgrade_policy = "compatible"
 authors = []
 
 [addresses]
+my_add='0x710a17549a738350806e597866f7a28ef0c722eaf09520c873cdc6e97a6e009c'
 
 [dev-addresses]
+my_add='0x710a17549a738350806e597866f7a28ef0c722eaf09520c873cdc6e97a6e009c'
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-framework.git"
